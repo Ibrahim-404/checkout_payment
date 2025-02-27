@@ -5,8 +5,9 @@ import '../../../../../../core/utils/colorsInApp.dart';
 
 class PaymentOption extends StatelessWidget {
   String imageLink;
+  bool isSelected ;
 
-  PaymentOption({super.key, required this.imageLink});
+  PaymentOption({super.key, required this.imageLink, this.isSelected = false});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +22,7 @@ class PaymentOption extends StatelessWidget {
             shape: BoxShape.rectangle,
             border: Border.all(
               width: 1.5,
-              color: AppColor.black70,
+              color:isSelected? AppColor.green : AppColor.black70,
               style: BorderStyle.solid,
             ),
           ),

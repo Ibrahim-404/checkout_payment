@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../Payment Details.dart';
+import 'GenerateIndicator.dart';
 import 'VisaCard.dart';
 
 class GenerateVisa extends StatefulWidget {
@@ -19,7 +20,8 @@ class _GenerateVisaState extends State<GenerateVisa> {
     _pageController.addListener(() {
       if (mounted) {
         setState(() {
-          currentIndex = (_pageController.page ?? 0).toInt(); // ✅ Fix potential null issue
+          currentIndex =
+              (_pageController.page ?? 0).toInt(); // ✅ Fix potential null issue
         });
       }
     });
@@ -48,7 +50,7 @@ class _GenerateVisaState extends State<GenerateVisa> {
           ),
         ),
         const SizedBox(height: 10),
-        GenerateIndicator(length:3, currentindex:currentIndex ),
+        GenerateIndicator(length: 3, currentindex: currentIndex),
       ],
     );
   }
