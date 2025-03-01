@@ -1,4 +1,5 @@
 import 'package:checkout_payment/feature/mycard/view/persentation/screens/components/CustomAppBar.dart';
+import 'package:checkout_payment/feature/mycard/view/persentation/screens/thank_you_screen_payment_details.dart';
 import 'package:flutter/material.dart';
 import 'components/CustomElevateButton.dart';
 import 'components/PaymentCardSummary.dart';
@@ -6,10 +7,8 @@ import 'components/generateCategoryOfPaymentMethod.dart';
 
 class PaymentDetails extends StatelessWidget {
   PaymentDetails({super.key});
-
   GlobalKey<FormState> formKey = GlobalKey();
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,6 +35,7 @@ class PaymentDetails extends StatelessWidget {
                   click: () {
                     if (formKey.currentState!.validate()) {
                       formKey.currentState!.save();
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => ThankYouScreenPaymentDetails()));
                     } else {
                       autovalidateMode = AutovalidateMode.always;
                     }

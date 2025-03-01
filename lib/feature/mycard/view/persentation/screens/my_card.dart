@@ -24,7 +24,7 @@ class MyCard extends StatelessWidget {
               Pricing(title: "Discount", value: "\$0"),
               Pricing(title: "Shipping", value: "\$8"),
               SizedBox(height: 12),
-              CustomDivider(),
+              CustomDivider(indent: 35,endIndent: 35,),
               Pricing(title: "Total", value: "\$20.97"),
               CustomElevateButton(
                 buttonName: "Complete Payment",

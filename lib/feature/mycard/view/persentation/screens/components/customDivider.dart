@@ -3,15 +3,16 @@ import 'package:flutter/material.dart';
 import '../../../../../../core/utils/colorsInApp.dart';
 
 class CustomDivider extends StatelessWidget {
-  const CustomDivider({super.key});
+ final double indent,endIndent;
+  const CustomDivider({super.key, required this.indent, required this.endIndent});
 
   @override
   Widget build(BuildContext context) {
     return Divider(
       thickness: 3,
       color: AppColor.gray,
-      indent: 45,
-      endIndent: 45,
+      indent: indent,
+      endIndent: endIndent,
     );
   }
 }
