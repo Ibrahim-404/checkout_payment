@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'components/BarcodeWithStatus.dart';
 import 'components/ThankYouShape.dart';
 import 'components/sideShape.dart';
 import 'components/successfulTransactionShape.dart';
@@ -10,6 +11,8 @@ class ThankYouScreenPaymentDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenHeight = MediaQuery.of(context).size.height;
+    double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -32,7 +35,18 @@ class ThankYouScreenPaymentDetails extends StatelessWidget {
                   sideShape(whichSide: true),
                   sideShape(whichSide: false),
                   successfulTransactionShape(),
-                  thankYouContent(),
+                  Positioned(
+                    top: 55,
+                    left: 0,
+                    right: 0,
+                    child: thankYouContent(),
+                  ),
+                  Positioned(
+                    top: screenHeight * 0.6,
+                    left: screenWidth * 0.1, // Centered horizontally
+                    right: screenWidth * 0.1,
+                    child: BarcodeWithStatus(),
+                  ),
                 ],
               ),
             ],
@@ -42,7 +56,3 @@ class ThankYouScreenPaymentDetails extends StatelessWidget {
     );
   }
 }
-
-
-
-
